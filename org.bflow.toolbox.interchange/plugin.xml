@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="org.bflow.toolbox.interchange.exportscript" name="Add-ons Exportscript" schema="schema/org.bflow.toolbox.interchange.exportscript.exsd"/>
+   <extension-point id="org.bflow.toolbox.interchange.importscript" name="Add-ons Importscript" schema="schema/org.bflow.toolbox.interchange.importscript.exsd"/>
+   <extension
+         point="org.eclipse.ui.exportWizards">
+      <category
+            id="org.bflow.toolbox.export.category.modellingtoolbox"
+            name="Modeling Toolbox">
+      </category>
+      <wizard
+            category="org.bflow.toolbox.export.category.modellingtoolbox"
+            class="org.bflow.toolbox.interchange.wizard.ExportWizard"
+            icon="icons/Plugin-Go-16.png"
+            id="org.bflow.toolbox.interchange.exportWizard"
+            name="Multitarget Export">
+         <description>
+            Exports the diagram to several types.
+         </description>
+      </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.ui.importWizards">
+      <category
+            id="org.bflow.toolbox.import.category.modellingtoolbox"
+            name="Modeling Toolbox">
+      </category>
+      <wizard
+            category="org.bflow.toolbox.import.category.modellingtoolbox"
+            class="org.bflow.toolbox.interchange.wizard.ImportWizard"
+            icon="icons/Plugin-Go-16.png"
+            id="org.bflow.toolbox.interchange.importWizard"
+            name="Multisource Import">
+         <description>
+            Imports a diagram from several types.
+         </description>
+      </wizard>
+   </extension>
+
+</plugin>

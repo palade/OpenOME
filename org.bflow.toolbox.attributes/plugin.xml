@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            category="org.bflow.toolbox.attributes.category"
+            class="org.bflow.toolbox.attributes.AttributeViewPart"
+            id="org.bflow.toolbox.epc.extensions.attribute.view"
+            name="Attribute View"
+            restorable="true">
+      </view>
+      <category
+            id="org.bflow.toolbox.attributes.category"
+            name="Modeling Toolbox">
+      </category>
+   </extension>
+   <extension
+         point="org.eclipse.emf.transaction.listeners">
+      <listener
+            class="org.bflow.toolbox.attributes.AttributeFile">
+      </listener>
+   </extension>
+
+</plugin>

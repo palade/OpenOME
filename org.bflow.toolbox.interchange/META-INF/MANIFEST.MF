@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Export-Package: org.bflow.toolbox.interchange,org.bflow.toolbox.interc
+ hange.events,org.bflow.toolbox.interchange.model,org.bflow.toolbox.in
+ terchange.store
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: lib/dom4j-1.6.1.jar,lib/saxon9.jar,lib/commons-io-1.
+ 4.jar,.
+Bundle-Name: Add-ons Interchange
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.gmf.runtime.diagram.ui;bundle-version="1.1.3",
+ org.bflow.toolbox.i18n;bundle-version="1.0.0",
+ org.eclipse.ui.ide;bundle-version="3.5.2"
+Bundle-Vendor: Universitaet Leipzig
+Bundle-Version: 1.0.0.201107141351
+Bundle-ManifestVersion: 2
+Bundle-Activator: org.bflow.toolbox.interchange.AddonsInterchangePlugi
+ n
+Bundle-SymbolicName: org.bflow.toolbox.interchange;singleton:=true
+Import-Package: edu.toronto.cs.openome.conversion.convertor,
+ org.eclipse.ui
+

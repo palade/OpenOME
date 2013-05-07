@@ -1,0 +1,1051 @@
+<?xml version="1.0"?>
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+	xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+	xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns="http://www.owl-ontologies.com/unnamed.owl#"
+	xml:base="http://www.owl-ontologies.com/unnamed.owl">
+	
+	<owl:Ontology rdf:about=""/>
+	
+	<owl:Class rdf:ID="QUERYABLE-CLASS">
+		<rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	</owl:Class>
+	<owl:Class rdf:ID="IStarOptionalFeatureLabel"/>
+	<owl:Class rdf:ID="OMELinkClass">
+		<rdfs:subClassOf>
+			<owl:Class rdf:ID="OMEObjectClass"/>
+		</rdfs:subClassOf>
+	</owl:Class>
+	<owl:Class rdf:ID="IStarDeniedLinkLabel"/>
+	<owl:Class rdf:ID="OMEGrowableElementClass">
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#OMEObjectClass"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Class rdf:ID="OMEElementClass"/>
+		</rdfs:subClassOf>
+	</owl:Class>
+	<owl:Class rdf:ID="IStarClass">
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#OMEObjectClass"/>
+		</rdfs:subClassOf>
+	</owl:Class>
+	<owl:Class rdf:about="#OMEElementClass">
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#OMEObjectClass"/>
+		</rdfs:subClassOf>
+	</owl:Class>
+	<owl:Class rdf:ID="Template_MetaClass">
+		<rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>Template MetaClass</rdfs:label>
+	</owl:Class>
+	<owl:Class rdf:ID="IStarSequentialControlLabel"/>
+	<owl:Class rdf:ID="OMEInstantiableClass">
+		<rdfs:subClassOf>
+			<owl:Class rdf:ID="OMEClass"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Class rdf:ID="OMEVisibleClass"/>
+		</rdfs:subClassOf>
+	</owl:Class>
+	<owl:Class rdf:ID="IStarUndecidedElementLabel"/>
+	<owl:Class rdf:ID="QUERY"/>
+	<owl:Class rdf:about="#OMEVisibleClass">
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#OMEClass"/>
+		</rdfs:subClassOf>
+	</owl:Class>
+	<owl:Class rdf:ID="IStarWeaklyDeniedElementLabel"/>
+	<owl:Class rdf:ID="OMEAttributeMetaClass">
+		<rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	</owl:Class>
+	<owl:Class rdf:ID="IStarWeaklySatisficedElementLabel"/>
+	<owl:Class rdf:ID="IStarLinkClass">
+		<rdfs:subClassOf rdf:resource="#OMELinkClass"/>
+		<rdfs:subClassOf rdf:resource="#IStarClass"/>
+	</owl:Class>
+	<owl:Class rdf:ID="IStarDeniedElementLabel"/>
+	<owl:Class rdf:ID="IStarAlternativeFeatureLabel"/>
+	<owl:Class rdf:ID="PAL-QUERY">
+		<rdfs:subClassOf rdf:resource="#QUERY"/>
+	</owl:Class>
+	<owl:Class rdf:ID="OMEAttributeClass">
+		<rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	</owl:Class>
+	<owl:Class rdf:ID="IStarElementClass">
+		<rdfs:subClassOf rdf:resource="#OMEElementClass"/>
+		<rdfs:subClassOf rdf:resource="#IStarClass"/>
+	</owl:Class>
+	<owl:Class rdf:ID="IStarConflictElementLabel"/>
+	<owl:Class rdf:ID="IStarParallelControlLabel"/>
+	<owl:Class rdf:ID="IStarSatisficedElementLabel"/>
+	<owl:Class rdf:about="#OMEClass">
+		<rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	</owl:Class>
+	<owl:Class rdf:about="#OMEObjectClass">
+		<rdfs:subClassOf rdf:resource="#OMEClass"/>
+	</owl:Class>
+	<owl:Class rdf:ID="IStarActorElementClass">
+		<rdfs:subClassOf rdf:resource="#IStarElementClass"/>
+	</owl:Class>
+	<owl:Class rdf:ID="IStarIntentionalElementClass">
+		<rdfs:subClassOf rdf:resource="#IStarElementClass"/>
+	</owl:Class>
+	<owl:Class rdf:ID="Property">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:allValuesFrom>
+					<Template_MetaClass rdf:ID="Template"/>
+				</owl:allValuesFrom>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:ID="test_instances"/>
+				</owl:onProperty>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+	</owl:Class>
+	<owl:ObjectProperty rdf:ID="OMEValueAttributes">
+		<rdfs:domain>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+					<owl:Class rdf:about="#OMEObjectClass"/>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:domain>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:ID="Cls"/>
+	<owl:ObjectProperty rdf:ID="children">
+		<rdfs:domain>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+					<OMEGrowableElementClass rdf:ID="OMEGrowableElement">
+						<rdfs:subClassOf>
+							<OMEElementClass rdf:ID="OMEElement">
+								<rdfs:subClassOf>
+									<OMEObjectClass rdf:ID="OMEObject"/>
+								</rdfs:subClassOf>
+							</OMEElementClass>
+						</rdfs:subClassOf>
+					</OMEGrowableElementClass>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:domain>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:ID="from">
+		<rdfs:domain>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+					<OMELinkClass rdf:ID="OMELink">
+						<rdfs:subClassOf rdf:resource="#OMEObject"/>
+					</OMELinkClass>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:domain>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:ID="Properties">
+		<rdfs:domain>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+					<owl:Class rdf:about="#Template_MetaClass"/>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:domain>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:ID="to">
+		<rdfs:domain>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+					<OMELinkClass rdf:about="#OMELink"/>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:domain>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:ID="Instance"/>
+	<owl:ObjectProperty rdf:ID="Instantiated-Values"/>
+	<owl:ObjectProperty rdf:ID="links">
+		<rdfs:domain>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+					<OMEObjectClass rdf:about="#OMEObject"/>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:domain>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:ID="parent">
+		<rdfs:domain>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+					<OMEElementClass rdf:about="#OMEElement"/>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:domain>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:about="#test_instances">
+		<rdfs:domain>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+					<owl:Class rdf:about="#Property"/>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:domain>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:ID="OMEAttributes">
+		<rdfs:domain>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+					<owl:Class rdf:about="#OMEObjectClass"/>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:domain>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:ID="SLOT-QUERIES">
+		<rdfs:domain>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+					<owl:Class rdf:about="#QUERYABLE-CLASS"/>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:domain>
+	</owl:ObjectProperty>
+	<owl:DatatypeProperty rdf:ID="string">
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:ID="imagename">
+		<rdfs:domain>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+					<owl:Class rdf:about="#OMEAttributeClass"/>
+					<owl:Class rdf:about="#OMEVisibleClass"/>
+					<owl:Class rdf:about="#IStarParallelControlLabel"/>
+					<owl:Class rdf:about="#IStarSequentialControlLabel"/>
+					<owl:Class rdf:about="#IStarAlternativeFeatureLabel"/>
+					<owl:Class rdf:about="#IStarOptionalFeatureLabel"/>
+					<owl:Class rdf:about="#IStarDeniedLinkLabel"/>
+					<owl:Class rdf:about="#IStarConflictElementLabel"/>
+					<owl:Class rdf:about="#IStarSatisficedElementLabel"/>
+					<owl:Class rdf:about="#IStarWeaklySatisficedElementLabel"/>
+					<owl:Class rdf:about="#IStarUndecidedElementLabel"/>
+					<owl:Class rdf:about="#IStarWeaklyDeniedElementLabel"/>
+					<owl:Class rdf:about="#IStarDeniedElementLabel"/>
+					<OMELinkClass rdf:ID="IStarSoftgoalContribution">
+						<rdfs:subClassOf>
+							<OMELinkClass rdf:ID="IStarLink">
+								<rdfs:subClassOf rdf:resource="#OMELink"/>
+							</OMELinkClass>
+						</rdfs:subClassOf>
+					</OMELinkClass>
+					<OMELinkClass rdf:ID="IStarCoversLink">
+						<rdfs:subClassOf rdf:resource="#IStarLink"/>
+					</OMELinkClass>
+					<OMELinkClass rdf:ID="IStarDecompositionLink">
+						<rdfs:subClassOf rdf:resource="#IStarLink"/>
+					</OMELinkClass>
+					<OMELinkClass rdf:ID="IStarDependencyLink">
+						<rdfs:subClassOf rdf:resource="#IStarLink"/>
+					</OMELinkClass>
+					<OMELinkClass rdf:ID="IStarINSLink">
+						<rdfs:subClassOf rdf:resource="#IStarLink"/>
+					</OMELinkClass>
+					<OMELinkClass rdf:ID="IStarISALink">
+						<rdfs:subClassOf rdf:resource="#IStarLink"/>
+					</OMELinkClass>
+					<OMELinkClass rdf:ID="IStarMeansEndsLink">
+						<rdfs:subClassOf rdf:resource="#IStarLink"/>
+					</OMELinkClass>
+					<OMELinkClass rdf:ID="IStarOccupiesLink">
+						<rdfs:subClassOf rdf:resource="#IStarLink"/>
+					</OMELinkClass>
+					<OMELinkClass rdf:ID="IStarPartsLink">
+						<rdfs:subClassOf rdf:resource="#IStarLink"/>
+					</OMELinkClass>
+					<OMELinkClass rdf:ID="IStarPlaysLink">
+						<rdfs:subClassOf rdf:resource="#IStarLink"/>
+					</OMELinkClass>
+					<IStarClass rdf:ID="IStarActorElement">
+						<rdfs:subClassOf>
+							<IStarClass rdf:ID="IStarElement">
+								<rdfs:subClassOf rdf:resource="#OMEElement"/>
+							</IStarClass>
+						</rdfs:subClassOf>
+						<rdfs:subClassOf rdf:resource="#OMEGrowableElement"/>
+					</IStarClass>
+					<IStarClass rdf:ID="IStarClaimElement">
+						<rdfs:subClassOf>
+							<IStarClass rdf:ID="IStarIntentionalElement">
+								<rdfs:subClassOf rdf:resource="#IStarElement"/>
+							</IStarClass>
+						</rdfs:subClassOf>
+					</IStarClass>
+					<IStarClass rdf:ID="IStarGoalElement">
+						<rdfs:subClassOf rdf:resource="#IStarIntentionalElement"/>
+					</IStarClass>
+					<IStarClass rdf:ID="IStarResourceElement">
+						<rdfs:subClassOf rdf:resource="#IStarIntentionalElement"/>
+					</IStarClass>
+					<IStarClass rdf:ID="IStarSoftGoalElement">
+						<rdfs:subClassOf rdf:resource="#IStarIntentionalElement"/>
+					</IStarClass>
+					<IStarClass rdf:ID="IStarTaskElement">
+						<rdfs:subClassOf rdf:resource="#IStarIntentionalElement"/>
+					</IStarClass>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:domain>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:ID="stroke">
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<rdfs:domain>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+					<owl:Class rdf:about="#OMELinkClass"/>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:domain>
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:ID="Boolean">
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:ID="Int">
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:ID="Property_Name">
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<rdfs:domain>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+					<owl:Class rdf:about="#Property"/>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:domain>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>Property Name</rdfs:label>
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:ID="Float">
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:ID="imagesize">
+		<rdfs:domain>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+					<owl:Class rdf:about="#OMEAttributeClass"/>
+					<owl:Class rdf:about="#OMEVisibleClass"/>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:domain>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:ID="Sample_Usage">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>Sample Usage</rdfs:label>
+		<rdfs:domain>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+					<owl:Class rdf:about="#Template_MetaClass"/>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:domain>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:ID="autogui">
+		<rdfs:domain>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+					<owl:Class rdf:about="#OMEInstantiableClass"/>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:domain>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:ID="name">
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<rdfs:domain>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+					<owl:Class rdf:about="#OMEAttributeClass"/>
+					<owl:Class rdf:about="#OMEVisibleClass"/>
+					<owl:Class rdf:about="#IStarParallelControlLabel"/>
+					<owl:Class rdf:about="#IStarSequentialControlLabel"/>
+					<owl:Class rdf:about="#IStarAlternativeFeatureLabel"/>
+					<owl:Class rdf:about="#IStarOptionalFeatureLabel"/>
+					<owl:Class rdf:about="#IStarDeniedLinkLabel"/>
+					<owl:Class rdf:about="#IStarConflictElementLabel"/>
+					<owl:Class rdf:about="#IStarSatisficedElementLabel"/>
+					<owl:Class rdf:about="#IStarWeaklySatisficedElementLabel"/>
+					<owl:Class rdf:about="#IStarUndecidedElementLabel"/>
+					<owl:Class rdf:about="#IStarWeaklyDeniedElementLabel"/>
+					<owl:Class rdf:about="#IStarDeniedElementLabel"/>
+					<OMEObjectClass rdf:about="#OMEObject"/>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:domain>
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:ID="Axiom_Translation">
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<rdfs:domain>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+					<owl:Class rdf:about="#Template_MetaClass"/>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:domain>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>Axiom Translation</rdfs:label>
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:ID="justification">
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:ID="defaultname">
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<rdfs:domain>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+					<owl:Class rdf:about="#OMEObjectClass"/>
+					<OMELinkClass rdf:ID="IStarAndContribution">
+						<rdfs:subClassOf rdf:resource="#IStarSoftgoalContribution"/>
+					</OMELinkClass>
+					<OMELinkClass rdf:ID="IStarBreakContribution">
+						<rdfs:subClassOf rdf:resource="#IStarSoftgoalContribution"/>
+					</OMELinkClass>
+					<OMELinkClass rdf:about="#IStarCoversLink"/>
+					<OMELinkClass rdf:ID="IStarEqualContribution">
+						<rdfs:subClassOf rdf:resource="#IStarSoftgoalContribution"/>
+					</OMELinkClass>
+					<OMELinkClass rdf:ID="IStarHelpContribution">
+						<rdfs:subClassOf rdf:resource="#IStarSoftgoalContribution"/>
+					</OMELinkClass>
+					<OMELinkClass rdf:ID="IStarHurtContribution">
+						<rdfs:subClassOf rdf:resource="#IStarSoftgoalContribution"/>
+					</OMELinkClass>
+					<OMELinkClass rdf:about="#IStarINSLink"/>
+					<OMELinkClass rdf:about="#IStarISALink"/>
+					<OMELinkClass rdf:ID="IStarMakeContribution">
+						<rdfs:subClassOf rdf:resource="#IStarSoftgoalContribution"/>
+					</OMELinkClass>
+					<OMELinkClass rdf:about="#IStarOccupiesLink"/>
+					<OMELinkClass rdf:ID="IStarOrContribution">
+						<rdfs:subClassOf rdf:resource="#IStarSoftgoalContribution"/>
+					</OMELinkClass>
+					<OMELinkClass rdf:about="#IStarPartsLink"/>
+					<OMELinkClass rdf:about="#IStarPlaysLink"/>
+					<OMELinkClass rdf:ID="IStarSomeNegativeContribution">
+						<rdfs:subClassOf rdf:resource="#IStarSoftgoalContribution"/>
+					</OMELinkClass>
+					<OMELinkClass rdf:ID="IStarSomePositiveContribution">
+						<rdfs:subClassOf rdf:resource="#IStarSoftgoalContribution"/>
+					</OMELinkClass>
+					<OMELinkClass rdf:ID="IStarUnknownContribution">
+						<rdfs:subClassOf rdf:resource="#IStarSoftgoalContribution"/>
+					</OMELinkClass>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:domain>
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:ID="template_00106">
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:ID="Machine-Readable_Template_Code">
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<rdfs:domain>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+					<owl:Class rdf:about="#Template_MetaClass"/>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:domain>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>Machine-Readable Template Code</rdfs:label>
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:ID="Verified">
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+		<rdfs:domain>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+					<owl:Class rdf:about="#Template_MetaClass"/>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:domain>
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:ID="Template-Name">
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:ID="Difficulty_Level">
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+		<rdfs:domain>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+					<owl:Class rdf:about="#Template_MetaClass"/>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:domain>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>Difficulty Level</rdfs:label>
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:ID="imageposition">
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+		<rdfs:domain>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+					<owl:Class rdf:about="#OMEAttributeClass"/>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:domain>
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:ID="source">
+		<rdfs:domain>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+					<Template_MetaClass rdf:ID="EZPal-CONSTRAINT">
+						<rdfs:subClassOf rdf:resource="http://protege.stanford.edu/plugins/owl/protege#PAL-CONSTRAINT"/>
+					</Template_MetaClass>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:domain>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+	</owl:DatatypeProperty>
+	<OMEAttributeMetaClass rdf:ID="IStarControlLabelClass">
+		<rdfs:subClassOf rdf:resource="#OMEAttributeClass"/>
+	</OMEAttributeMetaClass>
+	<Template_MetaClass rdf:ID="Every_instance_of_class_____that_contains_value_____in_slot_____must_have_values_in_slot_____that_are_instances_of_class____.">
+		<rdfs:subClassOf rdf:resource="#Template"/>
+		<Axiom_Translation rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+			>(defrange ?{Class A} :FRAME {Class A})
+			(defrange ?{Class A}-SlotVal :FRAME {Class A} {Slot A 1})
+			^(forall ?{Class A}
+			(forall ?{Class A}-SlotVal
+			(=&gt; {NVariation A 0}
+		(instance-of ?{Class A}-SlotVal {Class B}))))</Axiom_Translation>
+		<Machine-Readable_Template_Code rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>Every instance of {Class A} whose {NVariation A 0} {Boolean b1} have values in {Slot A 1} that are instances of {Class B}.</Machine-Readable_Template_Code>
+		<Difficulty_Level rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+		>9</Difficulty_Level>
+		<Sample_Usage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>If a student is tired, he is only involved in leisure activites. &lt;=&gt; Every instance of Class Student whose Slot fitness-level : Class Student has value &lt; 5 must have Slot activities : Class Student values that are instances of Leisure-Activities.</Sample_Usage>
+		<Verified rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+		>true</Verified>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>Every instance of class ___ that contains value ___ in slot ___ must have values in slot ___ that are instances of class ___.</rdfs:label>
+	</Template_MetaClass>
+	<OMEAttributeMetaClass rdf:ID="IStarLinkLabelClass">
+		<rdfs:subClassOf rdf:resource="#OMEAttributeClass"/>
+	</OMEAttributeMetaClass>
+	<Template_MetaClass rdf:ID="For_every_instance_I1_of_class______if_the_value_of_slot_____is_an_instance_of_I2__then_there_is_an_instance_of_class_____that_contains_I1_in_slot_____and_I2_in_slot____.">
+		<rdfs:subClassOf rdf:resource="#Template"/>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>For every instance I1 of class ___, if the value of slot ___ is an instance of I2, then there is an instance of class ___ that contains I1 in slot ___ and I2 in slot ___.</rdfs:label>
+		<Difficulty_Level rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+		>8</Difficulty_Level>
+		<Axiom_Translation rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+			>(defrange ?{Class A}1 :FRAME {Class A})
+			(defrange ?{Class B}2 :FRAME {Class B})
+			(defrange ?{Class C}3 :FRAME {Class C})
+			^(forall ?{Class A}1
+			(forall ?{Class B}2
+			(exists ?{Class C}3
+			(=&gt; ({Slot A 0} ?{Class A}1 ?{Class B}2)
+			(and ({Slot C 0} ?{Class C}3 ?{Class A}1)
+		({Slot C 1} ?{Class C}3 ?{Class B}2))))))</Axiom_Translation>
+		<Machine-Readable_Template_Code rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>For every instance I1 of {Class A} , if the value of {Slot A 0} is an instance I2 of {Class B A 0} , then there is an instance of {Class C} that contains I1 in {Slot C 0} and I2 in {Slot C 1}.</Machine-Readable_Template_Code>
+		<Sample_Usage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>For any shuttle bus stop and any neighbor bus stop, there is a particular route that has both stops. &lt;=&gt; For every instance I1 of Class Bus_stop, if the value of slot adjacent_stop : Class Bus_stop has instance I2 of Class Bus_stop , then there is an instance of Class Route that contains I1 in Slot stops: Class Route and I2 in Slot stops: Class Route.</Sample_Usage>
+		<Verified rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+		>true</Verified>
+	</Template_MetaClass>
+	<IStarClass rdf:ID="IStarAgentElement">
+		<rdfs:subClassOf rdf:resource="#IStarActorElement"/>
+	</IStarClass>
+	<Template_MetaClass rdf:ID="For_every_instance_I1_of_class______if_the_value_of_slot_____has_an_instance_I2_of_class______then_slot_____of_I1_has_a_value_________then_value_of_slot_____of_I2.">
+		<Difficulty_Level rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+		>8</Difficulty_Level>
+		<Sample_Usage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+			>Example: An editor earns more than the staff members he is responsible for.
+		&lt;=&gt;For every instance I1 of Class Editor, if the value of Slot responsible for : Class Editor has instance I2 of class Staff, then Slot salary: Class Editor of I1 has a value &gt; to Slot salary: Class Staff of I2.</Sample_Usage>
+		<Verified rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+		>true</Verified>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>For every instance I1 of class ___, if the value of slot ___ has an instance I2 of class ___, then slot ___ of I1 has a value (&gt;,=,&lt;) then value of slot ___ of I2.</rdfs:label>
+		<Machine-Readable_Template_Code rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>For every instance I1 of {Class B} , if the value of {Slot B 0} is an instance I2 of {Class A B 0}, then {Slot B 1} of I1 has a value {Equality e1} {Slot A 0} of I2.</Machine-Readable_Template_Code>
+		<Axiom_Translation rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+			>(defrange ?{Class A}1 :FRAME {Class A})
+			(defrange ?{Class B}2 :FRAME {Class B})
+			^(forall ?{Class A}1
+			(forall ?{Class B}2
+			(=&gt; ({Slot B 0} ?{Class A}1 ?{Class B}2)
+			({Equality e1} ({Slot A 0} ?{Class A}1) ({Slot B 1} ?{Class B}2)))))
+		</Axiom_Translation>
+		<rdfs:subClassOf rdf:resource="#Template"/>
+	</Template_MetaClass>
+	<OMEAttributeMetaClass rdf:ID="IStarElementLabelClass">
+		<rdfs:subClassOf rdf:resource="#OMEAttributeClass"/>
+	</OMEAttributeMetaClass>
+	<rdf:Description rdf:about="http://protege.stanford.edu/plugins/owl/protege#PAL-RANGE">
+		<rdfs:domain>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://protege.stanford.edu/plugins/owl/protege#PAL-CONSTRAINT"/>
+					<owl:Class rdf:about="#PAL-QUERY"/>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:domain>
+	</rdf:Description>
+	<Template_MetaClass rdf:ID="For_every_instance_I1_of_class______if_the_value_of_slot_____is__instance_I2_of_class______they_must_share_the_same_value_in_slot_____for_I1_and_slot_____for_I2.">
+		<Axiom_Translation rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+			>(defrange ?{Class A} :FRAME {Class A})
+			(defrange ?{Class B} :FRAME {Class B})
+			^(forall ?{Class A}
+			(forall ?{Class B}
+			(=&gt; ({Slot B 0} ?{Class B} ?{Class A})
+		(= ({Slot A 0} ?{Class A}) ({Slot B 1} ?{Class B})))))</Axiom_Translation>
+		<Verified rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+		>true</Verified>
+		<Difficulty_Level rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+		>7</Difficulty_Level>
+		<Machine-Readable_Template_Code rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>For every instance I1 of {Class B} ,  if the value of {Slot B 0} contains instance I2 of class {Class A B 0} , they  must share the same value in {Slot B 1} for I1 and {Slot A 0} for I2.</Machine-Readable_Template_Code>
+		<Sample_Usage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>Example: Every student project that is a continuation of a previous project has the same starting data available as the final data available of the previous project. &lt;=&gt; For every instance I1 of Class Project, if the value of  Slot continuation-of contains instance I2 of Class Project, they must share the same value in Slot starting-data : Class Project of I1 and Slot final-data : Class Project of I2.</Sample_Usage>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>For every instance I1 of class ___, if the value of slot ___ is  instance I2 of class ___, they must share the same value in slot ___ for I1 and slot ___ for I2.</rdfs:label>
+		<rdfs:subClassOf rdf:resource="#Template"/>
+	</Template_MetaClass>
+	<Template_MetaClass rdf:ID="If_Instance_I1of_class_____has_slot_____that_contains_value______then_I2_of_class_____must_cannot_contain_I1_in_slot____._">
+		<rdfs:subClassOf rdf:resource="#Template"/>
+		<Machine-Readable_Template_Code rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>If Instance I1 of {Class B A 0} has {Value B 0}, then I2 of {Class A} {Boolean b1} contain I1 in {Slot A 0}. </Machine-Readable_Template_Code>
+		<Difficulty_Level rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+		>7</Difficulty_Level>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>If Instance I1of class ___ has slot ___ that contains value ___, then I2 of class ___ must/cannot contain I1 in slot ___. </rdfs:label>
+		<Verified rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+		>true</Verified>
+		<Sample_Usage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>An upper-division course can only be taken by advanced undergraduate students. &lt;=&gt; If Instance I1of Class Course has Slot advanced: Class Course that contains value "yes", then I2 of Class Undergrad cannot contain I1 in Slot Courses: Class Undergrad. </Sample_Usage>
+		<Axiom_Translation rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+			>(defrange ?{Class A} :FRAME {Class A})
+			(defrange ?{Class B} :FRAME {Class B})
+			^(forall ?{Class A}
+			(forall ?{Class B}
+			(=&gt; ({Slot A 0} ?{Class A} ?{Class B})
+		({Boolean b1} {Value B 0}))))</Axiom_Translation>
+	</Template_MetaClass>
+	<Template_MetaClass rdf:ID="Every_instance_of_class_____must_have_a_unique_value_in_slot____.">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>Every instance of class ___ must have a unique value in slot ___.</rdfs:label>
+		<Difficulty_Level rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+		>1</Difficulty_Level>
+		<Verified rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+		>true</Verified>
+		<Axiom_Translation rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+			>(defrange ?{Class A}1 :FRAME {Class A})
+			(defrange ?{Class A}2 :FRAME {Class A})
+			^ (forall ?{Class A}1
+			(forall ?{Class A}2
+			(=&gt; (and (own-slot-not-null {Slot A 0} ?{Class A}1)
+			(own-slot-not-null {Slot A 0} ?{Class A}2))
+			(=&gt; (not (= ?{Class A}1 ?{Class A}2))
+		(not (= ({Slot A 0} ?{Class A}1) ({Slot A 0} ?{Class A}2)))))))</Axiom_Translation>
+		<Sample_Usage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>Every employee (class employee) has a unique ID (slot ID of class employee). </Sample_Usage>
+		<Machine-Readable_Template_Code rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>Every instance of {Class A} must have a unique value in {Slot A 0} .</Machine-Readable_Template_Code>
+		<rdfs:subClassOf rdf:resource="#Template"/>
+	</Template_MetaClass>
+	<Template_MetaClass rdf:ID="For_every_instance_of_class______slots_____and_____cannot_have_the_same_value.">
+		<rdfs:subClassOf rdf:resource="#Template"/>
+		<Difficulty_Level rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+		>2</Difficulty_Level>
+		<Machine-Readable_Template_Code rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>For every instance of {Class A} , {Slot A 0} and {Slot A 1} cannot have the same value</Machine-Readable_Template_Code>
+		<Axiom_Translation rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+			>(defrange ?{Class A} :FRAME {Class A})
+			^(forall ?{Class A}
+			(=&gt; (and (own-slot-not-null {Slot A 0} ?{Class A})
+			(own-slot-not-null {Slot A 1} ?{Class A}))
+		(not (= ({Slot A 0} ?{Class A}) ({Slot A 1} ?{Class A})))))</Axiom_Translation>
+		<Verified rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+		>true</Verified>
+		<Sample_Usage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+			>A student does not have an activity he both likes an dislikes.
+		&lt;=&gt;For every instance of Class Student, Slot favorite-activities : Class Student and Slot disliked-activities : Class Student cannot have the same value.</Sample_Usage>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>For every instance of class ___, slots ___ and ___ cannot have the same value.</rdfs:label>
+	</Template_MetaClass>
+	<Template_MetaClass rdf:ID="For_every_instance_of_class______slot_____must_have_values_that_are_instances_of_classes_specified_by_slot____">
+		<Difficulty_Level rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+		>7</Difficulty_Level>
+		<Axiom_Translation rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+			>(defrange ?{Class A} :FRAME {Class A})
+			^(forall ?{Class A}
+		(direct-instance-of ({Slot A 0} {Class A}) ({Slot A 1} {Class A})))</Axiom_Translation>
+		<rdfs:subClassOf rdf:resource="#Template"/>
+		<Machine-Readable_Template_Code rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>For every instance of {Class A} , {Slot A 0} must have values that are instances of classes specified by {Slot A 1}.</Machine-Readable_Template_Code>
+		<Verified rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+		>true</Verified>
+		<Sample_Usage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+			>Students are only allowed to take courses offered by their departments.
+		&lt;=&gt;For every instance of Class Student, Slot courses-in-progress : Class Student must have values that are instances of classes specified by Slot program : Class Department.</Sample_Usage>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>For every instance of class ___, slot ___ must have values that are instances of classes specified by slot ___</rdfs:label>
+	</Template_MetaClass>
+	<Template_MetaClass rdf:ID="IFor_every_instance_I1_of_class______if_the_value_of_slot_____has_an_instance_I2_of_class______I2_must_have_value_____in_slot____.">
+		<Difficulty_Level rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+		>7</Difficulty_Level>
+		<Machine-Readable_Template_Code rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>For every instance I1 of {Class A} , if the value of {Slot A 0} has instance I2 of {Class B A 0}, I2 has {NVariation B 0}. </Machine-Readable_Template_Code>
+		<Sample_Usage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>A computer scientist only works in an office with computer in it. &lt;=&gt; For every instance I1 of Class Computer_Scientist, if the slot work_place : Class Computer_Scientist contains an Instance I2 of Class Office, I2 must have value "true" in slot has_computer: Class Office.</Sample_Usage>
+		<Verified rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+		>true</Verified>
+		<rdfs:subClassOf rdf:resource="#Template"/>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>IFor every instance I1 of class ___, if the value of slot ___ has an instance I2 of class ___, I2 must have value ___ in slot ___.</rdfs:label>
+		<Axiom_Translation rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+			>(defrange ?{Class A} :FRAME {Class A})
+			(defrange ?{Class B} :FRAME {Class B})
+			^(forall ?{Class A}
+			(forall ?{Class B}
+			(=&gt; ({Slot A 0} ?{Class A} ?{Class B})
+		{NVariation B 0})))</Axiom_Translation>
+	</Template_MetaClass>
+	<Template_MetaClass rdf:ID="Every_instance_of_class_____appears_at_least_once_in_slot_____of_any_instance_of_class____">
+		<Axiom_Translation rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+			>(defrange ?{Class A} :FRAME {Class A})
+			(defrange ?{Class B} :FRAME {Class B})
+			^(forall ?{Class A}
+			(exists ?{Class B}
+			(=&gt; (own-slot-not-null {Slot B 0} ?{Class B})
+		({Slot B 0} ?{Class B} ?{Class A}))))</Axiom_Translation>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>Every instance of class ___ appears at least once in slot ___ of any instance of class ___</rdfs:label>
+		<Machine-Readable_Template_Code rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>Every instance of {Class A} appears at least once in {Slot B 0} of any instance of {Class B} .</Machine-Readable_Template_Code>
+		<Verified rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+		>true</Verified>
+		<Sample_Usage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>Every student has at least one advisor. &lt;=&gt; Every instance of Class Student appears at least once in Slot advisee : Class Professor of any instance of Class Professor.</Sample_Usage>
+		<Difficulty_Level rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+		>3</Difficulty_Level>
+		<rdfs:subClassOf rdf:resource="#Template"/>
+	</Template_MetaClass>
+	<Template_MetaClass rdf:ID="At_least_one_instance_of_class_____contains_value_____in_slot____.">
+		<Sample_Usage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>Example: At least one member on the organizational committee is a senior member (year&gt;10).&lt;=&gt;At least one instance of Class Organizational-Committee has Slot year : Class Organizational-Committee value &gt; 10.</Sample_Usage>
+		<rdfs:subClassOf rdf:resource="#Template"/>
+		<Axiom_Translation rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+			>(defrange ?{Class A} :FRAME {Class A})
+			^(exists ?{Class A}
+			{NVariation A 0})
+		</Axiom_Translation>
+		<Verified rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+		>true</Verified>
+		<Machine-Readable_Template_Code rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>At least one instance of {Class A} has {NVariation A 0}.</Machine-Readable_Template_Code>
+		<Difficulty_Level rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+		>2</Difficulty_Level>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>At least one instance of class ___ contains value ___ in slot ___.</rdfs:label>
+	</Template_MetaClass>
+	<OMEAttributeMetaClass rdf:ID="IStarContributionLabelClass">
+		<rdfs:subClassOf rdf:resource="#OMEAttributeClass"/>
+	</OMEAttributeMetaClass>
+	<Template_MetaClass rdf:ID="For_every_instance_I1_of_class______if_the_value_of_slot_____has_an_instance_I2_of_class______then_if_slot_____of_I1_has_value______slot_____I2_must_have_value____.">
+		<Sample_Usage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>A classroom for which a SITN class is scheduled requires broadcasting equipment. &lt;=&gt; If instance I1 of Class Course has instance I2 of Class Room in Slot room : Class Course, then if Slot SITN: Class Course of I1 has value "yes" then Slot has_BEquipment: Class Room has value "yes".</Sample_Usage>
+		<Difficulty_Level rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+		>9</Difficulty_Level>
+		<Verified rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+		>true</Verified>
+		<Machine-Readable_Template_Code rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>For every instance I1 of {Class A}, if the value of {Slot A 0} has an instance I2 of {Class B A 0} , then if  if I1 has {Value A 1} then I2 has {NVariation B 0}. </Machine-Readable_Template_Code>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>For every instance I1 of class ___, if the value of slot ___ has an instance I2 of class ___, then if slot ___ of I1 has value ___, slot ___ I2 must have value ___.</rdfs:label>
+		<Axiom_Translation rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+			>(defrange ?{Class A} :FRAME {Class A})
+			(defrange ?{Class B} :FRAME {Class B})
+			^(forall ?{Class A}
+			(forall ?{Class B}
+			(=&gt; (and ({Slot A 0} ?{Class A} ?{Class B})
+			{Value A 1})
+		{NVariation B 0})))</Axiom_Translation>
+		<rdfs:subClassOf rdf:resource="#Template"/>
+	</Template_MetaClass>
+	<Template_MetaClass rdf:ID="For_every_instances_of_class______slot_____cannot_contain_both_instances_of_class_____and____.">
+		<Verified rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+		>true</Verified>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>For every instances of class ___, slot ___ cannot contain both instances of class ___ and ___.</rdfs:label>
+		<Difficulty_Level rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+		>6</Difficulty_Level>
+		<rdfs:subClassOf rdf:resource="#Template"/>
+		<Sample_Usage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>An Entree cannot be recommended to both meat-eaters and vegetarians. &lt;=&gt;For every instances of Class Food, Slot recommended-to : Class Food cannot contain both instances of Class Carnivore and Class Herbivore.</Sample_Usage>
+		<Axiom_Translation rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+			>(defrange ?{Class A} :FRAME {Class A})
+			(defrange ?{Class B} :FRAME {Class B})
+			(defrange ?{Class C} :FRAME {Class C})
+			^(forall ?{Class A}
+			(forall ?{Class B}
+			(forall ?{Class C}
+			(not (and ({Slot A 0} ?{Class A} ?{Class B})
+		({Slot A 0} ?{Class A} ?{Class C}))))))</Axiom_Translation>
+		<Machine-Readable_Template_Code rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>For every instances of {Class A}, {Slot A 0} cannot contain both instances of class {Class B} and {Class C}.</Machine-Readable_Template_Code>
+	</Template_MetaClass>
+	<IStarClass rdf:ID="IStarRoleElement">
+		<rdfs:subClassOf rdf:resource="#IStarActorElement"/>
+	</IStarClass>
+	<OMEAttributeMetaClass rdf:ID="IStarFeatureLabelClass">
+		<rdfs:subClassOf rdf:resource="#OMEAttributeClass"/>
+	</OMEAttributeMetaClass>
+	<Template_MetaClass rdf:ID="If_instance_I1_of_class_____has_instance_I2_of_class_____in_slot_____of_I1__and_I2_has_instance_I3_of_class_____in_slot_____of_I2__then_I3_must_cannot_have_I1_in_slot_____.">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>If instance I1 of class ___ has instance I2 of class ___ in slot ___ of I1, and I2 has instance I3 of class ___ in slot ___ of I2, then I3 must/cannot have I1 in slot ___ .</rdfs:label>
+		<Difficulty_Level rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+		>9</Difficulty_Level>
+		<Axiom_Translation rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+			>(defrange ?{Class A}1 :FRAME {Class A})
+			(defrange ?{Class B}2 :FRAME {Class B})
+			(defrange ?{Class C}3 :FRAME {Class C})
+			^(forall ?{Class A}1 (forall ?{Class B}2 (forall ?{Class C}3
+			(=&gt; (and ({Slot A 0} ?{Class A}1 ?{Class B}2)
+			({Slot B 0} ?{Class B}2 ?{Class C}3))
+		({Boolean b1} ({Slot C 0} ?{Class C}3 ?{Class A}1))))))</Axiom_Translation>
+		<rdfs:subClassOf rdf:resource="#Template"/>
+		<Verified rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+		>true</Verified>
+		<Machine-Readable_Template_Code rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>If instance I1 of {Class A} has an instance I2 of {Class B A 0} in {Slot A 0} of I1, and I2 has instance I3 of {Class C B 0} in {Slot B 0} of I2, then I3 {Boolean b1} have I1 in slot {Slot C 0} .</Machine-Readable_Template_Code>
+		<Sample_Usage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>If student A is a peer advisor of student B, and student B is a peer advisor of student C, then student C cannot be a peer advisor of student A.&lt;=&gt;If instance I1 of Class Student has instance I2 of Class Student in Slot peer-advisor-of : Class Student, and I2 has an instance I3 of Class Student in Slot peer-advisor-of : Class Student, then I3 cannot have I1 in Slot peer-advisor-of : Class Student.</Sample_Usage>
+	</Template_MetaClass>
+	<Template_MetaClass rdf:ID="For_every_instance_of_class______slot_____and_slot_____must_have_instances_of_the_same_class">
+		<Machine-Readable_Template_Code rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>For every instance of {Class A} , {Slot A 0} and {Slot A 1} must have instances of the same class.</Machine-Readable_Template_Code>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>For every instance of class ___, slot ___ and slot ___ must have instances of the same class</rdfs:label>
+		<Axiom_Translation rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+			>(defrange ?{Class A} :FRAME {Class A})
+			^(forall ?{Class A}
+		(= (get-class ({Slot A 0} ?{Class A})) (get-class ({Slot A 1} ?{Class A}))))</Axiom_Translation>
+		<rdfs:subClassOf rdf:resource="#Template"/>
+		<Sample_Usage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>The advisor an honor thesis and the student must be from the same department. &lt;=&gt; For every instance of Class Honor-Thesis, Slot advisor : Class Honor-Thesis and Slot student : Class Honor-Thesis must have instances of the same class.</Sample_Usage>
+		<Difficulty_Level rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+		>4</Difficulty_Level>
+		<Verified rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+		>false</Verified>
+	</Template_MetaClass>
+	<IStarClass rdf:ID="IStarPositionElement">
+		<rdfs:subClassOf rdf:resource="#IStarActorElement"/>
+	</IStarClass>
+	<Template_MetaClass rdf:ID="Every_instance_of_class_____that_share_the_same_value_in_slot_____must_cannot_have_identical_values_in_slot____.">
+		<Machine-Readable_Template_Code rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>Every instance of {Class A} that share the same value in {Slot A 0} {Boolean b1} share values in slot {Slot A 1}.</Machine-Readable_Template_Code>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>Every instance of class ___ that share the same value in slot ___ must/cannot have identical values in slot ___.</rdfs:label>
+		<Sample_Usage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+			>All staff members who share an office are assigned different desks.
+		&lt;=&gt; Every Instance of Class Staff that share the same value in Slot office-number : Class Staff must share/not share values in Slot desk-number : Class Staff.</Sample_Usage>
+		<Verified rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+		>true</Verified>
+		<Axiom_Translation rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+			>(defrange ?{Class A}1 :FRAME {Class A})
+			(defrange ?{Class A}2 :FRAME {Class A})
+			^(forall ?{Class A}1
+			(forall ?{Class A}2
+			(=&gt; (and (own-slot-not-null {Slot A 0} ?{Class A}1)
+			(own-slot-not-null {Slot A 0} ?{Class A}2))
+			(=&gt; (and (not (= ?{Class A}1 ?{Class A}2))
+			(= ({Slot A 0} ?{Class A}1) ({Slot A 0} ?{Class A}1)))
+		({Boolean b1} (= ({Slot A 1} ?{Class A}1) ({Slot A 1} ?{Class A}2)))))))</Axiom_Translation>
+		<Difficulty_Level rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+		>6</Difficulty_Level>
+		<rdfs:subClassOf rdf:resource="#Template"/>
+	</Template_MetaClass>
+	<rdf:Description rdf:about="http://protege.stanford.edu/plugins/owl/protege#PAL-NAME">
+		<rdfs:domain>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://protege.stanford.edu/plugins/owl/protege#PAL-CONSTRAINT"/>
+					<owl:Class rdf:about="#PAL-QUERY"/>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:domain>
+	</rdf:Description>
+	<IStarClass rdf:ID="IStarAspectElement">
+		<rdfs:subClassOf rdf:resource="#IStarActorElement"/>
+	</IStarClass>
+	<Template_MetaClass rdf:ID="If_an_instance_of_class_____contains_value_____in_slot______it__must_contain_value_____in_slot____.">
+		<Axiom_Translation rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+			>(defrange ?{Class A} :FRAME {Class A})
+			^(forall ?{Class A}
+			(=&gt; {NVariation A 0}
+		{NVariation A 1}))</Axiom_Translation>
+		<Verified rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+		>true</Verified>
+		<Machine-Readable_Template_Code rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>Every instance of {Class A} whose {NVariation A 0} must have {NVariation A 1} .</Machine-Readable_Template_Code>
+		<Sample_Usage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>A student who has fewer than 180 units or who has not completed the distribution requirement cannot graduate &lt;=&gt; Every instance of Class Student whose Slot units-completed : Class Student has value &lt; 180 OR Slot distribution-completed : Class student has false must have Slot is-graduating : Class student has false.</Sample_Usage>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>If an instance of class ___ contains value ___ in slot ___, it  must contain value ___ in slot ___.</rdfs:label>
+		<rdfs:subClassOf rdf:resource="#Template"/>
+		<Difficulty_Level rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+		>3</Difficulty_Level>
+	</Template_MetaClass>
+	<rdf:Description rdf:about="http://protege.stanford.edu/plugins/owl/protege#PAL-DESCRIPTION">
+		<rdfs:domain>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://protege.stanford.edu/plugins/owl/protege#PAL-CONSTRAINT"/>
+					<owl:Class rdf:about="#PAL-QUERY"/>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:domain>
+	</rdf:Description>
+	<Template_MetaClass rdf:ID="For_every_instance_of_class______value_of_slot_____must_be_________than_the_value_of_slot____.">
+		<rdfs:subClassOf rdf:resource="#Template"/>
+		<Machine-Readable_Template_Code rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>For every instance of {Class A} , value of {Slot A 0} must be {Equality e} than the value of {Slot A 1}.</Machine-Readable_Template_Code>
+		<Difficulty_Level rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+		>4</Difficulty_Level>
+		<Verified rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+		>true</Verified>
+		<Sample_Usage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+			>The number of courses a student can take is limited by his course-tuition units.
+		&lt;=&gt;For every instance of Class Student, Slot num-courses : Class Student contains the number of values less than or equal to the value of Slot tuition-units: Class Student.</Sample_Usage>
+		<Axiom_Translation rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+			>(defrange ?{Class A} :FRAME {Class A})
+			^(forall ?{Class A}
+		({Equality e} ( {Slot A 0} ?{Class A}) ({Slot A 1} ?{Class A})))</Axiom_Translation>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>For every instance of class ___, value of slot ___ must be (&gt;,=,&lt;) than the value of slot ___.</rdfs:label>
+	</Template_MetaClass>
+	<Template_MetaClass rdf:ID="For_every_instance_I1_of_class______if_the_value_of_slot_____has_an_instance_I2_of_class______then_there_is_an_instance_of_class_____that_contains_I2_in_slot____.">
+		<Verified rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+		>true</Verified>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>For every instance I1 of class ___, if the value of slot ___ has an instance I2 of class ___, then there is an instance of class ___ that contains I2 in slot ___.</rdfs:label>
+		<Axiom_Translation rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+			>(defrange ?{Class A}1 :FRAME {Class A})
+			(defrange ?{Class B}2 :FRAME {Class B})
+			(defrange ?{Class C}3 :FRAME {Class C})
+			^(forall ?{Class A}1
+			(forall ?{Class B}2
+			(exists ?{Class C}3
+			(=&gt; ({Slot A 0} ?{Class A}1 ?{Class B}2)
+		({Slot C 0} ?{Class C}3 ?{Class B}2)))))</Axiom_Translation>
+		<Machine-Readable_Template_Code rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>For every instance I1 of {Class A}, if {Slot A 0} contains an instance I2 of {Class B A 0} , then there is an instance of {Class C} that contains I2 in {Slot C 0}.</Machine-Readable_Template_Code>
+		<rdfs:subClassOf rdf:resource="#Template"/>
+		<Sample_Usage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>Every student athelete must major in a department. &lt;=&gt; For every instance I1 of Class Sport_Program, if the value of slot students : Class Sport_Program has instance I2 of Class Student, then there is an instance of Class Department that contains I2 in slot students : Class Department. </Sample_Usage>
+		<Difficulty_Level rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+		>7</Difficulty_Level>
+	</Template_MetaClass>
+	<Template_MetaClass rdf:ID="For_every_instance_of_class_____value_of_slot_____must_also_be_a_value_of_slot_____of_an_instance_of_class____">
+		<rdfs:subClassOf rdf:resource="#Template"/>
+		<Machine-Readable_Template_Code rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>For every instance of {Class A}, value of {Slot A 0} must also be a value of {Slot B 0} of an instance of {Class B}.</Machine-Readable_Template_Code>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>For every instance of class___, value of slot ___ must also be a value of slot ___ of an instance of class ___</rdfs:label>
+		<Axiom_Translation rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+			>(defrange ?{Class A} :FRAME {Class A})
+			(defrange ?{Class B} :FRAME {Class B})
+			^(forall ?{Class A}
+			(exists ?{Class B}
+			(= ({Slot A 0} ?{Class A}) ({Slot B 0} ?{Class B}))))
+
+		</Axiom_Translation>
+		<Verified rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+		>true</Verified>
+		<Difficulty_Level rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+		>6</Difficulty_Level>
+		<Sample_Usage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>Every research project conducted by an undergraduate student must be offered by a department. &lt;=&gt;For every isntance of Class Student, value of slot Project: Class Student must also be a value of slot Projects : Department of an instance of class Department.</Sample_Usage>
+	</Template_MetaClass>
+	<Template_MetaClass rdf:ID="For_every_instance_I1_of_class______there_must_be_an_instance_I2_of_class_____that_contains_I1_in_slot____.">
+		<Machine-Readable_Template_Code rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>For every instance I1 of {Class A B 0}, there must be an instance I2 of {Class B} that contains I1 in {Slot B 0}. </Machine-Readable_Template_Code>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>For every instance I1 of class ___, there must be an instance I2 of class ___ that contains I1 in slot ___.</rdfs:label>
+		<Axiom_Translation rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+			>(defrange ?{Class A}1 :FRAME {Class A})
+			(defrange ?{Class B}2 :FRAME {Class B})
+			^(forall ?{Class A}1
+			(exists ?{Class B}2
+		({Slot B 0} ?{Class B}2 ?{Class A}1)))</Axiom_Translation>
+		<rdfs:subClassOf rdf:resource="#Template"/>
+		<Difficulty_Level rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+		>4</Difficulty_Level>
+		<Sample_Usage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>Every student is an advisee of a professor &lt;=&gt; For every instance I1 of Class Student, there must be an instance I2 of Class Professor that contains I1 in slot advisee: Class Professor.</Sample_Usage>
+		<Verified rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+		>true</Verified>
+	</Template_MetaClass>
+	<Template_MetaClass rdf:ID="Every_instance_of_class_____has_a_value_in_slot______________than_every_at_least_one_value_of_slot_____of_class____.">
+		<rdfs:subClassOf rdf:resource="#Template"/>
+		<Sample_Usage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>A senior manager makes more than any entry-level manager. &lt;=&gt; Every instance of Class Senoir_Manager has a value in Slot Salary: Class Manager &gt; every value of Slot Salary: Class Junior_Manager of Class Junior_Manager.</Sample_Usage>
+		<Difficulty_Level rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+		>7</Difficulty_Level>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>Every instance of class ___ has a value in slot ___  (&gt;,=,&lt;) than every/at least one value of slot ___ of class ___.</rdfs:label>
+		<Verified rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+		>true</Verified>
+		<Machine-Readable_Template_Code rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+		>Every instance of {Class A} has a value in slot {Slot A 0} {Equality e1} {Enumeration e2} value of {Slot B 0} of {Class B}.</Machine-Readable_Template_Code>
+		<Axiom_Translation rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+			>(defrange ?{Class A}1 :FRAME {Class A})
+			(defrange ?{Class B}2 :FRAME {Class B})
+			^(forall ?{Class A}1
+			({Enumeration e2} ?{Class B}2
+		({Equality e1} ({Slot A 0} ?{Class A}1) ({Slot B 0} ?{Class B}2))))</Axiom_Translation>
+	</Template_MetaClass>
+	<rdf:Description rdf:about="http://protege.stanford.edu/plugins/owl/protege#PAL-STATEMENT">
+		<rdfs:domain>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://protege.stanford.edu/plugins/owl/protege#PAL-CONSTRAINT"/>
+					<owl:Class rdf:about="#PAL-QUERY"/>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:domain>
+	</rdf:Description>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.4.8, Build 629)  http://protege.stanford.edu -->

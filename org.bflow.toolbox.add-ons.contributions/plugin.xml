@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.bflow.toolbox.interchange.exportscript">
+      <Exportscript
+            File="exportscripts/OpenOME2Prolog.exd.xml">
+      </Exportscript>
+      <Exportscript
+            File="exportscripts/SimpleAttributeExtract.exd.xml">
+      </Exportscript>
+      <Exportscript
+            File="exportscripts/OpenOME2iStarML.exd.xml">
+      </Exportscript>
+   </extension>
+   <extension
+         point="org.bflow.toolbox.addons.rule">
+      <Rule
+            Abbr="en"
+            File="rules/en.xml">
+      </Rule>
+   </extension>
+   <extension
+         point="org.bflow.toolbox.addons.protocol">
+      <Protocol
+            File="protocols/ExtendedModelValidation.xml"
+            ID="openome.extendedmodelvalidation">
+      </Protocol>
+   </extension>
+   <extension
+         point="org.bflow.toolbox.addons.prologaddition">
+      <Prolog_Addition
+            File="prolog additions/istar2011.pl"
+            ID="openome.addons.istar2011"
+            Name="Prolog facts">
+      </Prolog_Addition>
+   </extension>
+</plugin>

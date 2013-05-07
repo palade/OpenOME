@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: OpenOME model Plug-in
+Bundle-SymbolicName: openome_model;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Vendor: University of Toronto KM lab
+Bundle-Localization: plugin
+Eclipse-LazyStart: true
+Plugin-Class: PluginActivator

@@ -1,0 +1,23 @@
+<owl:Ontology rdf:about="">
+	<owl:imports rdf:resource="http://www.owl-ontologies.com/GRL.owl" />
+</owl:Ontology>
+<!— Definition of the Hard Goal and Tasks -->
+<p1:IStarGoalElement rdf:ID="Hard_Goal" />
+<p1:IStarTaskElement rdf:ID="Task1" />
+<p1:IStarTaskElement rdf:ID="Task2" />
+<!-- Definition of the Actor -->
+<p1:IStarAspectElement rdf:ID="Actor1">
+	<p1:children rdf:resource="#Hard_Goal" />
+	<p1:children rdf:resource="#Task2" />
+	<p1:children rdf:resource="#Task1" />
+</p1:IStarAspectElement>
+<!— Definition of the  Means-Ends link -->
+<p1:IStarMeansEndsLink rdf:ID="IStarMeansEndsLink_unamed_0">
+	<p1:from rdf:resource="#Task1" />
+	<p1:to rdf:resource="#Hard_Goal" />
+</p1:IStarMeansEndsLink>
+<!— Definition of the Make Contribution -->
+<p1:IStarMakeContribution rdf:ID="IStarMakeContribution_unamed_0">
+	<p1:from rdf:resource="#Task2" />
+	<p1:to rdf:resource="#Hard_Goal" />
+</p1:IStarMakeContribution>

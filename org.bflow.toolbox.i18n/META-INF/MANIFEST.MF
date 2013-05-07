@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Export-Package: org.bflow.toolbox.i18n
+Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime
+Bundle-Vendor: Universitaet Leipzig
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: lib/commons-io-1.4.jar,.
+Bundle-Version: 1.0.0.201107141351
+Bundle-Name: Add-ons I18n
+Bundle-Activator: org.bflow.toolbox.i18n.Activator
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.bflow.toolbox.i18n
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+
