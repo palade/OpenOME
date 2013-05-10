@@ -9,6 +9,15 @@ Require-Bundle: org.eclipse.ui,
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ClassPath: lib/xerces-1.2.3.jar,
- .
-Export-Package: hello.actions,
+ .,
+ lib/libthrift-0.9.0.jar,
+ lib/log4j-1.2.15.jar,
+ lib/slf4j-api-1.7.5.jar,
+ lib/SSDClient-jar.jar,
+ lib/xercesImpl.jar
+Export-Package: cn.edu.pku.ss.matchmaker.SSDClient,
+ cn.edu.pku.ss.matchmaker.generator,
+ cn.edu.pku.ss.matchmaker.thrift,
+ cn.edu.pku.ss.serviceorch.thrift,
+ hello.actions,
  hello.util

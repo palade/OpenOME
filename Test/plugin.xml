@@ -43,6 +43,13 @@
                toolbarPath="sampleGroup"
                id="hello.actions.SampleAction">
          </action>
+         <action
+               class="hello.actions.SaveAsAction"
+               id="hello.actions.SaveAsAction"
+               label="Save as"
+               menubarPath="sampleMenu/sampleGroup"
+               tooltip="save as">
+         </action>
       </actionSet>
    </extension>
    <extension
@@ -87,9 +94,9 @@
             restorable="true">
       </view>
             <view
-            class="hello.actions.PropertyView"
-            id="Hello.viewForTest"
-            name="viewForTest"
+            class="hello.actions.CandidateServicesView"
+            id="Hello.CandidateService"
+            name="Candidate Service"
             restorable="true">
       </view>
    </extension>

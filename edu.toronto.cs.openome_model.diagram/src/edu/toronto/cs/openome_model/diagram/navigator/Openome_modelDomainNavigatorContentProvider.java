@@ -3,7 +3,6 @@ package edu.toronto.cs.openome_model.diagram.navigator;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.Iterator;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.common.util.URI;

@@ -133,11 +133,22 @@ public class AddonsInterchangePlugin extends AbstractUIPlugin {
 		}
 		
 		//Add export description for Q7 export.
-		ExportDescription exp = new ExportDescription(null,null,null);
-		exp.setName("Q7");
-		exp.setDescription("Exports an openOME diagram as Q7 file");
-		exp.setFileExtension("q7");
-		ExportscriptStore.register(exp);
+		ExportDescription q7Exp = new ExportDescription(null,null,null);
+		q7Exp.setName("Q7");
+		q7Exp.setDescription("Exports an openOME diagram as Q7 file");
+		q7Exp.setFileExtension("q7");
+		ExportDescription owlExp = new ExportDescription(null,null,null);
+		owlExp.setName("OWL");
+		owlExp.setDescription("Exports an openOME diagram as OWL file");
+		owlExp.setFileExtension("owl");
+		ExportDescription bpelExp = new ExportDescription(null,null,null);
+		bpelExp.setName("bpel");
+		bpelExp.setDescription("Exports an openOME diagram as bpel file");
+		bpelExp.setFileExtension("bpel");
+		
+		ExportscriptStore.register(q7Exp);
+		ExportscriptStore.register(owlExp);
+		ExportscriptStore.register(bpelExp);
 	}
 
 	private void registerImportscripts() throws IOException {

@@ -9,6 +9,7 @@ public class Publisher implements IPublisher {
 
 	@Override
 	public void add(IObserver i) {
+		// TODO Auto-generated method stub
 		obs.add(i);
 	}
 

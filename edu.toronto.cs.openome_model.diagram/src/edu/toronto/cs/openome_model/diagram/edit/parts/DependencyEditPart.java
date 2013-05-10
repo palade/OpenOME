@@ -1,7 +1,6 @@
 package edu.toronto.cs.openome_model.diagram.edit.parts;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import org.eclipse.draw2d.Connection;
 import org.eclipse.draw2d.ConnectionAnchor;

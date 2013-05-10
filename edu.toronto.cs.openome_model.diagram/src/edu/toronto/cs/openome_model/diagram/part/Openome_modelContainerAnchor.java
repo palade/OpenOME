@@ -1,5 +1,7 @@
 package edu.toronto.cs.openome_model.diagram.part;
 
+import openome_model.figures.ActorAnchor;
+
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.gmf.runtime.diagram.ui.render.editparts.RenderedDiagramRootEditPart;
 
@@ -7,8 +9,6 @@ import edu.toronto.cs.openome_model.diagram.edit.parts.ActorEditPart.ActorFigure
 import edu.toronto.cs.openome_model.diagram.edit.parts.AgentEditPart.AgentFigure;
 import edu.toronto.cs.openome_model.diagram.edit.parts.PositionEditPart.PositionFigure;
 import edu.toronto.cs.openome_model.diagram.edit.parts.RoleEditPart.RoleFigure;
-
-import openome_model.figures.ActorAnchor;
 
 /**
  * a ConnectionAnchor for containers that take into account the zoom level of the diagram

@@ -1,32 +1,14 @@
 package edu.toronto.cs.openome_model.diagram.views.tree;
 
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.ui.part.ViewPart;
 
-import edu.toronto.cs.openome_model.AndContribution;
-import edu.toronto.cs.openome_model.AndDecomposition;
-import edu.toronto.cs.openome_model.BreakContribution;
 import edu.toronto.cs.openome_model.Container;
-import edu.toronto.cs.openome_model.Contribution;
-import edu.toronto.cs.openome_model.Decomposition;
-import edu.toronto.cs.openome_model.Dependency;
-import edu.toronto.cs.openome_model.HelpContribution;
-import edu.toronto.cs.openome_model.HurtContribution;
 import edu.toronto.cs.openome_model.Intention;
-import edu.toronto.cs.openome_model.Link;
-import edu.toronto.cs.openome_model.MakeContribution;
 import edu.toronto.cs.openome_model.Model;
-import edu.toronto.cs.openome_model.OrContribution;
-import edu.toronto.cs.openome_model.OrDecomposition;
-import edu.toronto.cs.openome_model.SomeMinusContribution;
-import edu.toronto.cs.openome_model.SomePlusContribution;
-import edu.toronto.cs.openome_model.UnknownContribution;
 import edu.toronto.cs.openome_model.impl.ModelImpl;
-import edu.toronto.cs.openome_model.provider.DecompositionItemProvider;
 
 
 class ViewContentProvider implements IStructuredContentProvider,

@@ -10,7 +10,6 @@ import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 
-import edu.toronto.cs.openome_model.EvaluationLabel;
 import edu.toronto.cs.openome_model.Intention;
 import edu.toronto.cs.openome_model.diagram.edit.parts.CompartmentEditPart;
 import edu.toronto.cs.openome_model.diagram.edit.parts.Goal2EditPart;

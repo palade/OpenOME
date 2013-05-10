@@ -7,7 +7,5 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/Test"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/org.eclipse.bpel.model"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/edu.toronto.cs.openome.evaluation"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/edu.toronto.cs.openome_model"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

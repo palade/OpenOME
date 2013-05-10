@@ -6,7 +6,7 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: org.eclipse.bpel.ui.BPELUIPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Require-Bundle: javax.wsdl;bundle-version="1.6.2",
+Require-Bundle: javax.wsdl,
  org.eclipse.core.runtime;bundle-version="[3.4.0,4.0.0)",
  org.eclipse.core.resources;bundle-version="[3.4.0,4.0.0)",
  org.eclipse.ui.ide;bundle-version="[3.4.0,4.0.0)",
@@ -34,7 +34,9 @@ Require-Bundle: javax.wsdl;bundle-version="1.6.2",
  org.eclipse.wst.common.project.facet.core,
  org.eclipse.bpel.runtimes,
  org.eclipse.bpel.common.wsdl,
- Test;bundle-version="1.0.0"
+ Test;bundle-version="1.0.0",
+ edu.toronto.cs.openome.evaluation;bundle-version="1.0.0",
+ edu.toronto.cs.openome_model;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
 Export-Package: org.eclipse.bpel.ui,
  org.eclipse.bpel.ui.actions,

@@ -99,8 +99,10 @@ public class ServicePropertyView extends ViewPart {
 				String str = text.getText();
 				IWorkbenchPage wbp = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
 				IViewPart view2 = null;
+				IViewPart profileView = null;
 				try {
 					view2 = wbp.showView("Hello.view2");
+					profileView = wbp.showView("ProfilePropertyView");
 				}
 				catch (PartInitException e1) {
 					// TODO Auto-generated catch block
@@ -108,10 +110,13 @@ public class ServicePropertyView extends ViewPart {
 				}
 				//service list
 				TV tv = (TV)view2;
-						
+				ProfilePropertyView profileProView = (ProfilePropertyView)profileView;
+				
 				//tv.list.remove(oldValue);
 				int index = tv.list.indexOf(oldValue);
 				tv.list.setItem(index, str);
+				
+				profileProView.text_preBy.setText(str);
 				//tv.list.add(str);
 				//for save
 				Set<Entry<String,String>> set = ElementValue.vals.entrySet();
@@ -196,7 +201,7 @@ public class ServicePropertyView extends ViewPart {
 		
 		Group grpServicedesribedby = new Group(group, SWT.NONE);
 		grpServicedesribedby.setText("service:desribedBy");
-		grpServicedesribedby.setBounds(8, 195, 278, 77);
+		grpServicedesribedby.setBounds(10, 240, 278, 77);
 		
 		Button button_4 = new Button(grpServicedesribedby, SWT.NONE);
 		button_4.setImage(ResourceManager.getPluginImage("Test", "icons/11.jpg"));
@@ -240,7 +245,7 @@ public class ServicePropertyView extends ViewPart {
 		
 		Group grpServicepresent = new Group(group, SWT.NONE);
 		grpServicepresent.setText("service:present");
-		grpServicepresent.setBounds(10, 278, 276, 108);
+		grpServicepresent.setBounds(10, 334, 276, 108);
 		
 		Button button_7 = new Button(grpServicepresent, SWT.NONE);
 		button_7.setImage(ResourceManager.getPluginImage("Test", "icons/11.jpg"));
@@ -285,7 +290,7 @@ public class ServicePropertyView extends ViewPart {
 		
 		Group grpServiceprovideby = new Group(group, SWT.NONE);
 		grpServiceprovideby.setText("service:provideBy");
-		grpServiceprovideby.setBounds(10, 392, 276, 95);
+		grpServiceprovideby.setBounds(12, 448, 276, 95);
 		
 		Button button_10 = new Button(grpServiceprovideby, SWT.NONE);
 		button_10.setImage(ResourceManager.getPluginImage("Test", "icons/11.jpg"));
@@ -304,7 +309,7 @@ public class ServicePropertyView extends ViewPart {
 		
 		Group grpServicesupports = new Group(group, SWT.NONE);
 		grpServicesupports.setText("service:supports");
-		grpServicesupports.setBounds(318, 200, 358, 287);
+		grpServicesupports.setBounds(320, 240, 358, 287);
 		
 		Button button_13 = new Button(grpServicesupports, SWT.NONE);
 		button_13.setImage(ResourceManager.getPluginImage("Test", "icons/11.jpg"));
@@ -349,7 +354,7 @@ public class ServicePropertyView extends ViewPart {
 		
 		tableViewer = new TableViewer(group, SWT.BORDER | SWT.FULL_SELECTION);
 		table = tableViewer.getTable();
-		table.setBounds(10, 81, 668, 108);
+		table.setBounds(10, 81, 668, 153);
 		table.setHeaderVisible(true);
 		
 		TableViewerColumn tableViewerColumn = new TableViewerColumn(tableViewer, SWT.NONE);
@@ -390,6 +395,34 @@ public class ServicePropertyView extends ViewPart {
         tableViewer.setCellEditors(cellEditor);
         ICellModifier modifier = new ServiceAnnoCellModifier(tableViewer);
         tableViewer.setCellModifier(modifier);
+        
+        System.out.println("cccccccccccccccccccccccccccccc");
+        List input = (List)tableViewer.getInput();
+		if(input == null)
+			input = new ArrayList();
+		ServiceAnnotation sa1 = new ServiceAnnotation();
+		ServiceAnnotation sa2 = new ServiceAnnotation();
+		ServiceAnnotation sa3 = new ServiceAnnotation();
+		ServiceAnnotation sa4 = new ServiceAnnotation();
+		ServiceAnnotation sa5 = new ServiceAnnotation();
+		ServiceAnnotation sa6 = new ServiceAnnotation();
+		
+		sa1.setPro("serviceName");
+		sa2.setPro("textDescription");
+		sa3.setPro("contactInformation");
+		sa4.setPro("serviceCategoryList");
+		sa5.setPro("resultList");
+		sa6.setPro("serviceProducts");
+		
+		input.add(sa1);
+		input.add(sa2);
+		input.add(sa3);
+		input.add(sa4);
+		input.add(sa5);
+		input.add(sa6);
+		
+		tableViewer.setInput(input);
+		
 	}
 
 	@Override

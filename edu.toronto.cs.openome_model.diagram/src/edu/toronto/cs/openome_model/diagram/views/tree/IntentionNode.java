@@ -1,24 +1,13 @@
 package edu.toronto.cs.openome_model.diagram.views.tree;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
-import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.gef.EditPart;
-import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramGraphicalViewer;
-import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.swt.graphics.Image;
-import org.eclipse.ui.IEditorPart;
-import org.eclipse.ui.IWorkbenchPage;
-import org.eclipse.ui.PlatformUI;
-import org.eclipse.ui.internal.registry.EditorRegistry;
-import org.eclipse.ui.views.IViewDescriptor;
 
 import edu.toronto.cs.openome_model.AndContribution;
 import edu.toronto.cs.openome_model.AndDecomposition;
 import edu.toronto.cs.openome_model.BreakContribution;
-import edu.toronto.cs.openome_model.Container;
 import edu.toronto.cs.openome_model.Contribution;
 import edu.toronto.cs.openome_model.Decomposition;
 import edu.toronto.cs.openome_model.Dependency;
@@ -36,13 +25,7 @@ import edu.toronto.cs.openome_model.SomeMinusContribution;
 import edu.toronto.cs.openome_model.SomePlusContribution;
 import edu.toronto.cs.openome_model.Task;
 import edu.toronto.cs.openome_model.UnknownContribution;
-import edu.toronto.cs.openome_model.diagram.edit.parts.ModelEditPart;
-import edu.toronto.cs.openome_model.diagram.part.Openome_modelDiagramEditor;
 import edu.toronto.cs.openome_model.diagram.part.Openome_modelDiagramEditorPlugin;
-import edu.toronto.cs.openome_model.diagram.part.Openome_modelDiagramEditorUtil;
-import edu.toronto.cs.openome_model.diagram.providers.Openome_modelEditPartProvider;
-import edu.toronto.cs.openome_model.diagram.providers.Openome_modelElementTypes;
-import edu.toronto.cs.openome_model.diagram.providers.Openome_modelViewProvider;
 
 
 /**

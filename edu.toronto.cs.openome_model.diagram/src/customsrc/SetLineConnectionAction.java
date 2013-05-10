@@ -1,14 +1,11 @@
 package customsrc;
 
-import openome_model.figures.DependencyLineConnection;
-
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.gmf.runtime.common.ui.action.AbstractActionHandler;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbenchPage;
 
 import edu.toronto.cs.openome_model.diagram.edit.parts.AndContributionEditPart;
-import edu.toronto.cs.openome_model.diagram.edit.parts.AndDecompositionEditPart;
 import edu.toronto.cs.openome_model.diagram.edit.parts.BreakContributionEditPart;
 import edu.toronto.cs.openome_model.diagram.edit.parts.CoversAssociationEditPart;
 import edu.toronto.cs.openome_model.diagram.edit.parts.DependencyEditPart;
@@ -20,28 +17,10 @@ import edu.toronto.cs.openome_model.diagram.edit.parts.IsPartOfAssociationEditPa
 import edu.toronto.cs.openome_model.diagram.edit.parts.MakeContributionEditPart;
 import edu.toronto.cs.openome_model.diagram.edit.parts.OccupiesAssociationEditPart;
 import edu.toronto.cs.openome_model.diagram.edit.parts.OrContributionEditPart;
-import edu.toronto.cs.openome_model.diagram.edit.parts.OrDecompositionEditPart;
 import edu.toronto.cs.openome_model.diagram.edit.parts.PlaysAssociationEditPart;
 import edu.toronto.cs.openome_model.diagram.edit.parts.SomeMinusContributionEditPart;
 import edu.toronto.cs.openome_model.diagram.edit.parts.SomePlusContributionEditPart;
 import edu.toronto.cs.openome_model.diagram.edit.parts.UnknownContributionEditPart;
-import edu.toronto.cs.openome_model.diagram.edit.parts.AndContributionEditPart.AndContributionFigure;
-import edu.toronto.cs.openome_model.diagram.edit.parts.AndDecompositionEditPart.AndDecompositionFigure;
-import edu.toronto.cs.openome_model.diagram.edit.parts.BreakContributionEditPart.BreakContributionFigure;
-import edu.toronto.cs.openome_model.diagram.edit.parts.CoversAssociationEditPart.CoversAssociationFigure;
-import edu.toronto.cs.openome_model.diagram.edit.parts.HelpContributionEditPart.HelpContributionFigure;
-import edu.toronto.cs.openome_model.diagram.edit.parts.HurtContributionEditPart.HurtContributionFigure;
-import edu.toronto.cs.openome_model.diagram.edit.parts.INSAssociationEditPart.INSAssociationFigure;
-import edu.toronto.cs.openome_model.diagram.edit.parts.IsAAssociationEditPart.IsAAssociationFigure;
-import edu.toronto.cs.openome_model.diagram.edit.parts.IsPartOfAssociationEditPart.IsPartOfAssociationFigure;
-import edu.toronto.cs.openome_model.diagram.edit.parts.MakeContributionEditPart.MakeContributionFigure;
-import edu.toronto.cs.openome_model.diagram.edit.parts.OccupiesAssociationEditPart.OccupiesAssociationFigure;
-import edu.toronto.cs.openome_model.diagram.edit.parts.OrContributionEditPart.OrContributionFigure;
-import edu.toronto.cs.openome_model.diagram.edit.parts.OrDecompositionEditPart.OrDecompositionFigure;
-import edu.toronto.cs.openome_model.diagram.edit.parts.PlaysAssociationEditPart.PlaysAssociationFigure;
-import edu.toronto.cs.openome_model.diagram.edit.parts.SomeMinusContributionEditPart.SomeMinusContributionFigure;
-import edu.toronto.cs.openome_model.diagram.edit.parts.SomePlusContributionEditPart.SomePlusContributionFigure;
-import edu.toronto.cs.openome_model.diagram.edit.parts.UnknownContributionEditPart.UnknownContributionFigure;
 
 public class SetLineConnectionAction extends AbstractActionHandler {
 	

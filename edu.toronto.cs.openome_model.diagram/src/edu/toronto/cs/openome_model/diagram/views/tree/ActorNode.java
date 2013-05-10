@@ -1,7 +1,5 @@
 package edu.toronto.cs.openome_model.diagram.views.tree;
 
-import java.util.ArrayList;
-
 import org.eclipse.swt.graphics.Image;
 
 import edu.toronto.cs.openome_model.Actor;

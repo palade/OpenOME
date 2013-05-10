@@ -8,7 +8,6 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 
 import edu.toronto.cs.openome.conversion.AbstractHandler;
-import edu.toronto.cs.openome.conversion.convertor.CopyOfGRL2BPELConvertor;
 import edu.toronto.cs.openome.conversion.convertor.GRL2BPELConvertor;
 
 @SuppressWarnings("restriction")
@@ -18,7 +17,7 @@ public class GRL2BPELHandler extends AbstractHandler {
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 
 		try {
-			CopyOfGRL2BPELConvertor con = new CopyOfGRL2BPELConvertor();
+			GRL2BPELConvertor con = new GRL2BPELConvertor();
 			String bpelFilePath = con.convert();
 			openBPELFile(bpelFilePath);
 		} catch (Exception e) {

@@ -949,6 +949,10 @@
                   id="EditIOPEAction"
                   path="/additionsGroup">
             </popupAction>
+            <popupAction
+                  id="ServiceDiscoveryNowAction"
+                  path="/additionsGroup">
+            </popupAction>
             <popupStructuredContributionCriteria
                   objectClass="edu.toronto.cs.openome_model.diagram.edit.parts.TaskEditPart">
             </popupStructuredContributionCriteria>

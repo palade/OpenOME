@@ -201,7 +201,7 @@ public class OWLParser {
 	{
 		List<String> serNames = new LinkedList<String>();
 		
-		NodeList serList = this.document.getElementsByTagName("j.1:Service");
+		NodeList serList = this.document.getElementsByTagName("service:Service");
 		
 		for(int i = 0;i<serList.getLength();i++)
 		{
@@ -220,7 +220,7 @@ public class OWLParser {
 	{
 		List<String> proNames = new LinkedList<String>();
 		
-		NodeList proList = this.document.getElementsByTagName("j.0:Profile");
+		NodeList proList = this.document.getElementsByTagName("profile:Profile");
 		
 		for(int i = 0;i<proList.getLength();i++)
 		{
@@ -239,7 +239,7 @@ public class OWLParser {
 	{
 		List<String> procNames = new LinkedList<String>();
 		
-		NodeList procList = this.document.getElementsByTagName("j.2:AtomicProcess");
+		NodeList procList = this.document.getElementsByTagName("process:AtomicProcess");
 		
 		for(int i = 0;i<procList.getLength();i++)
 		{
@@ -254,7 +254,7 @@ public class OWLParser {
 	{
 		List<String> grouNames = new LinkedList<String>();
 		
-		NodeList grouList = this.document.getElementsByTagName("j.3:WsdlGrounding");
+		NodeList grouList = this.document.getElementsByTagName("grounding:WsdlGrounding");
 		
 		for(int i = 0;i<grouList.getLength();i++)
 		{
@@ -269,7 +269,7 @@ public class OWLParser {
 	{
 		List<String> inputValues = new LinkedList<String>();
 		
-		NodeList inputList = this.document.getElementsByTagName("j.2:Input");
+		NodeList inputList = this.document.getElementsByTagName("process:Input");
 		
 		for(int i = 0;i<inputList.getLength();i++)
 		{
@@ -286,7 +286,7 @@ public class OWLParser {
 	{
 		List<String> outputValues = new LinkedList<String>();
 		
-		NodeList outputList = this.document.getElementsByTagName("j.2:Output");
+		NodeList outputList = this.document.getElementsByTagName("process:Output");
 		
 		for(int i = 0;i<outputList.getLength();i++)
 		{
@@ -303,7 +303,7 @@ public class OWLParser {
 	{
 		List<String> atoProcGouValues = new LinkedList<String>();
 		
-		NodeList atoProcGouList = this.document.getElementsByTagName("j.3:WsdlAtomicProcessGrounding");
+		NodeList atoProcGouList = this.document.getElementsByTagName("grounding:WsdlAtomicProcessGrounding");
 		
 		for(int i = 0;i<atoProcGouList.getLength();i++)
 		{

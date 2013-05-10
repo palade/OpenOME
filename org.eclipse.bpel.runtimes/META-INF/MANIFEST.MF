@@ -23,7 +23,7 @@ Require-Bundle: org.eclipse.ui;bundle-version="[3.4.0,4.0.0)",
  org.eclipse.wst.wsdl;bundle-version="1.2.202",
  org.eclipse.jst.common.frameworks,
  org.eclipse.jem.workbench,
- javax.wsdl;bundle-version="1.6.2"
+ javax.wsdl
 Bundle-ActivationPolicy: lazy
 Export-Package: org.eclipse.bpel.runtimes,
  org.eclipse.bpel.runtimes.facets,

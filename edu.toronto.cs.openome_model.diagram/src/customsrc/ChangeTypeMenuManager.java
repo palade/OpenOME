@@ -1,14 +1,7 @@
 package customsrc;
 
-import org.eclipse.gef.EditPartViewer;
 import org.eclipse.gmf.runtime.common.ui.action.ActionMenuManager;
-import org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider;
-import org.eclipse.gmf.runtime.gef.ui.internal.actions.MenuManagerEx;
 import org.eclipse.jface.action.Action;
-import org.eclipse.jface.action.IAction;
-import org.eclipse.jface.action.MenuManager;
-import org.eclipse.ui.IWorkbenchPage;
-import org.eclipse.ui.IWorkbenchPart;
 
 @SuppressWarnings("restriction")
 public class ChangeTypeMenuManager extends ActionMenuManager {

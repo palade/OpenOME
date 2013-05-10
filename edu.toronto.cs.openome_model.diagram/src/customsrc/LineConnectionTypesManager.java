@@ -2,7 +2,6 @@ package customsrc;
 
 import org.eclipse.gmf.runtime.common.ui.action.ActionMenuManager;
 import org.eclipse.jface.action.Action;
-import org.eclipse.jface.action.IAction;
 
 public class LineConnectionTypesManager extends ActionMenuManager {
 

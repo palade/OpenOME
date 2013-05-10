@@ -1,8 +1,5 @@
 package customsrc;
 
-//import hello.actions.ProcessPropertyView;
-
-import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.gmf.runtime.common.ui.action.AbstractActionHandler;
 import org.eclipse.jface.util.IPropertyChangeListener;
@@ -11,12 +8,14 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IPerspectiveDescriptor;
 import org.eclipse.ui.IViewPart;
 import org.eclipse.ui.IWorkbenchPage;
-import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
-import org.eclipse.ui.views.IViewDescriptor;
 
 import edu.toronto.cs.openome_model.Intention;
+import edu.toronto.cs.openome_model.diagram.edit.parts.Task2EditPart;
 import edu.toronto.cs.openome_model.diagram.edit.parts.Task3EditPart;
+import edu.toronto.cs.openome_model.diagram.edit.parts.Task4EditPart;
+import edu.toronto.cs.openome_model.diagram.edit.parts.Task5EditPart;
+import edu.toronto.cs.openome_model.diagram.edit.parts.TaskEditPart;
 
 public class EditIOPEAction extends AbstractActionHandler {
 
@@ -60,36 +59,51 @@ public class EditIOPEAction extends AbstractActionHandler {
 
 			String taskName = null;
 			for (Object intention : selection.toArray()) {
-
-				if (intention instanceof Task3EditPart) {
-
-					Intention i = (Intention) ((Task3EditPart) intention)
+				Intention i = null;
+				if (intention instanceof TaskEditPart) {
+					i = (Intention) ((TaskEditPart) intention)
 							.resolveSemanticElement();
+				} else if (intention instanceof Task2EditPart) {
+					i = (Intention) ((Task2EditPart) intention)
+							.resolveSemanticElement();
+				} else if (intention instanceof Task3EditPart) {
+					i = (Intention) ((Task3EditPart) intention)
+							.resolveSemanticElement();
+				} else if (intention instanceof Task4EditPart) {
+					i = (Intention) ((Task4EditPart) intention)
+							.resolveSemanticElement();
+				} else if (intention instanceof Task5EditPart) {
+					i = (Intention) ((Task5EditPart) intention)
+							.resolveSemanticElement();
+				}
+
+				if (i != null) {
 					taskName = i.getName();
+					break;
 				}
 
 			}
 
-			// if (taskName != null) {
-			PropertyChangeEvent e = new PropertyChangeEvent(this, "Task",
-					"Old", taskName);
-			IPerspectiveDescriptor p = PlatformUI.getWorkbench()
-					.getPerspectiveRegistry()
-					.findPerspectiveWithId("hello.actions.ServicePerspective");
-			PlatformUI.getWorkbench().getActiveWorkbenchWindow()
-					.getActivePage().setPerspective(p);
-			IViewPart view = PlatformUI.getWorkbench()
-					.getActiveWorkbenchWindow().getActivePage()
-					.findView("ProcessPropertyView");
-			addPropertyChangeListener((IPropertyChangeListener) view);
-			firePropertyChange(e);
-			// }
+			editIOPEInfo(taskName);
 
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
+	}
+
+	private void editIOPEInfo(String taskName) {
+		PropertyChangeEvent e = new PropertyChangeEvent(this, "Task", "Old",
+				taskName);
+		IPerspectiveDescriptor p = PlatformUI.getWorkbench()
+				.getPerspectiveRegistry()
+				.findPerspectiveWithId("hello.actions.ServicePerspective");
+		PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage()
+				.setPerspective(p);
+		IViewPart view = PlatformUI.getWorkbench().getActiveWorkbenchWindow()
+				.getActivePage().findView("Hello.view2");
+		addPropertyChangeListener((IPropertyChangeListener) view);
+		firePropertyChange(e);
 	}
 
 }

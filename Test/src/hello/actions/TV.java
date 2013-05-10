@@ -1,42 +1,29 @@
 package hello.actions;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import hello.util.OWLParser;
+
 import java.util.Map.Entry;
+import java.util.Set;
 
 import org.eclipse.jface.dialogs.InputDialog;
+import org.eclipse.jface.util.IPropertyChangeListener;
+import org.eclipse.jface.util.PropertyChangeEvent;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Group;
+import org.eclipse.swt.widgets.List;
+import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.IViewPart;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.part.ViewPart;
-import org.eclipse.swt.layout.GridLayout;
-import org.eclipse.swt.SWT;
-import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.widgets.Button;
-import org.eclipse.swt.widgets.List;
-import org.eclipse.swt.widgets.Text;
-import org.eclipse.swt.layout.GridData;
-import org.eclipse.swt.custom.CBanner;
-import org.eclipse.swt.custom.ViewForm;
-import org.eclipse.swt.widgets.CoolBar;
-import org.eclipse.swt.widgets.CoolItem;
-import org.eclipse.swt.layout.RowLayout;
-import org.eclipse.swt.layout.FormLayout;
-import org.eclipse.swt.layout.FormData;
-import org.eclipse.swt.layout.FormAttachment;
-import org.eclipse.swt.events.SelectionAdapter;
-import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.graphics.Image;
 import org.eclipse.wb.swt.ResourceManager;
 import org.eclipse.wb.swt.SWTResourceManager;
-import org.eclipse.swt.widgets.Group;
-import org.eclipse.swt.custom.ScrolledComposite;
-import org.eclipse.wb.swt.SWTResourceManager;
 
-public class TV extends ViewPart {
+public class TV extends ViewPart implements IPropertyChangeListener{
 	public int counter = 1;
 	public List  list_1 = null;
 	private Group service;
@@ -238,6 +225,90 @@ public class TV extends ViewPart {
 		button_8.setImage(ResourceManager.getPluginImage("Test", "icons/33.jpg"));
 		button_8.setBounds(259, 12, 20, 21);
 		
+		final Button btnCheckluggage = new Button(service, SWT.NONE);
+		btnCheckluggage.setBounds(122, 9, 80, 27);
+		btnCheckluggage.setText("CheckLuggageSecurity");
+		btnCheckluggage.addSelectionListener(new SelectionAdapter()
+		{
+			public void widgetSelected(SelectionEvent e) {
+//				Set<Entry<String, String>> set = ElementValue.owlPath.entrySet();
+//				
+//				for(Entry<String,String> entry : set)
+//				{
+//					if(entry.getKey().equals(btnCheckluggage.getText()))
+//					{
+//						FilePath.filePath = entry.getValue();
+//						if(FilePath.filePath == null)
+//							return;
+//						OWLParser owl = new OWLParser(FilePath.filePath);
+//						owl.parse();
+//						owl.show(getSite().getWorkbenchWindow().getActivePage());
+//						return;
+//					}
+//
+//				}
+//				IWorkbenchPage wbp = getSite().getPage();
+//				IViewPart view = null;
+//				try {
+//					view = wbp.showView("Hello.view2");
+//				} catch (PartInitException e1) {
+//					// TODO Auto-generated catch block
+//					e1.printStackTrace();
+//				}
+//				TV tv = (TV)view;
+//				tv.list.add(btnCheckluggage.getText()+"Service");
+//				tv.list_1.add(btnCheckluggage.getText()+"Profile");
+//				tv.list_2.add(btnCheckluggage.getText()+"Process");
+//				tv.list_3.add(btnCheckluggage.getText()+"Grounding");
+//				
+//				try {
+//					view = wbp.showView("Hello.view3");
+//				} catch (PartInitException e1) {
+//					// TODO Auto-generated catch block
+//					e1.printStackTrace();
+//				}
+//				
+//				ServicePropertyView SPV = (ServicePropertyView)view;
+//				SPV.getText().setText(btnCheckluggage.getText()+"Service");
+//				SPV.text_des.setText(btnCheckluggage.getText()+"Process");
+//				SPV.text_pre.setText(btnCheckluggage.getText()+"Profile");
+//				SPV.text_sup.setText(btnCheckluggage.getText()+"Grounding");
+//				
+//				try {
+//					view = wbp.showView("ProfilePropertyView");
+//				} catch (PartInitException e1) {
+//					// TODO Auto-generated catch block
+//					e1.printStackTrace();
+//				}
+//				ProfilePropertyView PPV = (ProfilePropertyView)view;
+//				PPV.getText().setText(btnCheckluggage.getText()+"Profile");
+//				PPV.text_preBy.setText(btnCheckluggage.getText()+"Service");
+//				
+//				try {
+//					view = wbp.showView("ProcessPropertyView");
+//				} catch (PartInitException e1) {
+//					// TODO Auto-generated catch block
+//					e1.printStackTrace();
+//				}
+//				
+//				ProcessPropertyView ProcessV = (ProcessPropertyView)view;
+//				ProcessV.getText().setText(btnCheckluggage.getText()+"Process");
+//				ProcessV.text_1.setText(btnCheckluggage.getText()+"Service");
+//				
+//				try {
+//					view = wbp.showView("GroundingPropertyView");
+//				} catch (PartInitException e1) {
+//					// TODO Auto-generated catch block
+//					e1.printStackTrace();
+//				}
+//				
+//				GroundingPropertyView GPV = (GroundingPropertyView)view;
+//				GPV.getText().setText(btnCheckluggage.getText()+"Grounding");
+//				GPV.text_1.setText(btnCheckluggage.getText()+"Service");
+//				GPV.list.add(btnCheckluggage.getText()+"AtomicProcessGrounding");
+			}
+		});
+		
 		Group grpProfileprofile = new Group(parent, SWT.NONE);
 		grpProfileprofile.setText("profile:Profile");
 		grpProfileprofile.setBounds(15, 159, 284, 135);
@@ -429,5 +500,92 @@ public class TV extends ViewPart {
 	public void setFocus() {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public void propertyChange(PropertyChangeEvent event) {
+		
+		System.out.println("GET Event: "+event.getNewValue());
+		
+		String name = (String) event.getNewValue();
+		
+		Set<Entry<String, String>> set = ElementValue.owlPath.entrySet();
+		
+		for(Entry<String,String> entry : set)
+		{
+			if(entry.getKey().equals(name))
+			{
+				FilePath.filePath = entry.getValue();
+				if(FilePath.filePath == null)
+					return;
+				OWLParser owl = new OWLParser(FilePath.filePath);
+				owl.parse();
+				owl.show(getSite().getWorkbenchWindow().getActivePage());
+				return;
+			}
+
+		}
+		IWorkbenchPage wbp = getSite().getPage();
+		IViewPart view = null;
+		try {
+			view = wbp.showView("Hello.view2");
+		} catch (PartInitException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		TV tv = (TV)view;
+		tv.list.add(name+"Service");
+		tv.list_1.add(name+"Profile");
+		tv.list_2.add(name+"Process");
+		tv.list_3.add(name+"Grounding");
+		
+		try {
+			view = wbp.showView("Hello.view3");
+		} catch (PartInitException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		ServicePropertyView SPV = (ServicePropertyView)view;
+		SPV.getText().setText(name+"Service");
+		SPV.text_des.setText(name+"Process");
+		SPV.text_pre.setText(name+"Profile");
+		SPV.text_sup.setText(name+"Grounding");
+		
+		try {
+			view = wbp.showView("ProfilePropertyView");
+		} catch (PartInitException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		ProfilePropertyView PPV = (ProfilePropertyView)view;
+		PPV.getText().setText(name+"Profile");
+		PPV.text_preBy.setText(name+"Service");
+		
+		try {
+			view = wbp.showView("ProcessPropertyView");
+		} catch (PartInitException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		ProcessPropertyView ProcessV = (ProcessPropertyView)view;
+		ProcessV.getText().setText(name+"Process");
+		ProcessV.text_1.setText(name+"Service");
+		
+		try {
+			view = wbp.showView("GroundingPropertyView");
+		} catch (PartInitException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		GroundingPropertyView GPV = (GroundingPropertyView)view;
+		GPV.getText().setText(name+"Grounding");
+		GPV.text_1.setText(name+"Service");
+		GPV.list.add(name+"AtomicProcessGrounding");
+		
+		
+		
 	}
 }

@@ -1,7 +1,5 @@
 package edu.toronto.cs.openome_model.diagram.navigator;
 
-import java.util.Iterator;
-
 import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.common.ui.URIEditorInput;
 import org.eclipse.emf.common.util.URI;

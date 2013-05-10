@@ -16,17 +16,23 @@ public class ServiceAnnoLabelProvider extends LabelProvider implements
 	@Override
 	public String getColumnText(Object element, int columnIndex) {
 		// TODO Auto-generated method stub
-		 if (element instanceof ServiceAnnotation){
-			 ServiceAnnotation p = (ServiceAnnotation)element;
-             if(columnIndex == 0){
-                 return p.getPro();
-             }else if(columnIndex == 1){
-                 return p.getValue();
-             }else if (columnIndex ==2){
-                 return p.getLang();
-             }
-         }
-         return null;
+		if (element instanceof CandidateServiceViewItem) {
+			CandidateServiceViewItem p = (CandidateServiceViewItem) element;
+			if (columnIndex == 0) {
+				return p.getServiceName();
+			} else if (columnIndex == 1) {
+				return p.getCategory();
+			} else if (columnIndex == 2) {
+				return p.getActor();
+			} else if (columnIndex == 3) {
+				return p.getInput();
+			} else if (columnIndex == 4) {
+				return p.getOutput();
+			} else if (columnIndex == 5) {
+				return p.getContext();
+			}
+		}
+		return null;
 	}
 
 }

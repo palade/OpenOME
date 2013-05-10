@@ -279,6 +279,19 @@ public class ProfilePropertyView extends ViewPart {
 				{
 					str = dialog.getValue();
 					list.add(str);
+					
+					IWorkbenchPage wbp = getSite().getPage();
+					IViewPart view = null;
+					try {
+						view = wbp.showView("ProcessPropertyView");
+					} catch (PartInitException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					ProcessPropertyView PPV = (ProcessPropertyView)view;
+					PPV.list.add(str);
+					PPV.list_1.add(str);
+					list_2.add(str);
 				}
 			}
 		});
@@ -325,6 +338,18 @@ public class ProfilePropertyView extends ViewPart {
 				{
 					str = dialog.getValue();
 					list_1.add(str);
+					list_2.add(str);
+					
+					IWorkbenchPage wbp = getSite().getPage();
+					IViewPart view = null;
+					try {
+						view = wbp.showView("ProcessPropertyView");
+					} catch (PartInitException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					ProcessPropertyView PPV = (ProcessPropertyView)view;
+					PPV.list_1.add(str);
 				}
 			}
 		});
@@ -456,6 +481,33 @@ public class ProfilePropertyView extends ViewPart {
         tableViewer.setCellEditors(cellEditor);
         ICellModifier modifier = new ServiceAnnoCellModifier(tableViewer);
         tableViewer.setCellModifier(modifier);
+        
+//        System.out.println("cccccccccccccccccccccccccccccc");
+//        List input = (List)tableViewer.getInput();
+//		if(input == null)
+//			input = new ArrayList();
+//		ServiceAnnotation sa1 = new ServiceAnnotation();
+//		ServiceAnnotation sa2 = new ServiceAnnotation();
+//		ServiceAnnotation sa3 = new ServiceAnnotation();
+//		ServiceAnnotation sa4 = new ServiceAnnotation();
+//		ServiceAnnotation sa5 = new ServiceAnnotation();
+//		ServiceAnnotation sa6 = new ServiceAnnotation();
+//		
+//		sa1.setPro("serviceName");
+//		sa2.setPro("textDescription");
+//		sa3.setPro("contactInformation");
+//		sa4.setPro("serviceCategoryList");
+//		sa5.setPro("resultList");
+//		sa6.setPro("serviceProducts");
+//		
+//		input.add(sa1);
+//		input.add(sa2);
+//		input.add(sa3);
+//		input.add(sa4);
+//		input.add(sa5);
+//		input.add(sa6);
+//		
+//		tableViewer.setInput(input);
         
         Group group_1 = new Group(group, SWT.NONE);
         group_1.setText("profile:hasParameter");

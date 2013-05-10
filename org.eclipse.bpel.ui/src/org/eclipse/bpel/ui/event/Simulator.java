@@ -1,63 +1,46 @@
 package org.eclipse.bpel.ui.event;
 
-import java.util.Date;
-import java.util.Timer;
+import java.util.LinkedList;
+import java.util.List;
 
-import org.eclipse.ui.IEditorInput;
-import org.eclipse.ui.IWorkbenchPage;
-import org.eclipse.ui.IWorkbenchWindow;
-import org.eclipse.ui.PlatformUI;
-
-public class Simulator
-{
-
-	private static Simulator	instance;
-	private IEditorInput		bpelInput;
-	private IEditorInput		goalInput;
-
-	private IWorkbenchPage		iwp;
-
-	Simulator()
+public class Simulator implements Runnable{
+	private IPublisher pb;
+	private List list = new LinkedList();
+	private int counter = 0;
+	public Simulator()
 	{
+		list.add("If");
+		list.add("Else If");
+		list.add("BuyAirTicket_assign_1");
+		list.add("BuyAirTicket_invoke");
+		list.add("BuyAirTicket_assign_2");
+		list.add("AboradCard_assign_1");
+		list.add("AboradCard_invoke");
+		list.add("AboradCard_assign_2");
+		list.add("CheckLuggageSecurity_sequence");
+		list.add("CheckLuggageSecurity_assign_1");
+		list.add("CheckLuggageSecurity_invoke");
 
 	}
-
-	public void setBPELInput(IEditorInput bpelInput)
+	public void setPB(IPublisher p)
 	{
-		this.bpelInput = bpelInput;
+		this.pb = p;
 	}
-
-	public void setGoalInput(IEditorInput goalInput)
-	{
-		this.goalInput = goalInput;
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		while(counter != list.size())//list保存当前bpel模型中的所有活动节点名称
+		{
+			this.pb.setName((String)list.get(counter));
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			counter ++;
+		}
 	}
-
-	public void setWorkbenchPage(IWorkbenchPage page)
-	{
-		this.iwp = page;
-	}
-
-	public static Simulator getInstance()
-	{
-		if (instance == null)
-			instance = new Simulator();
-		return instance;
-	}
-
-	public void sim()
-	{
-
-		Publisher p = new Publisher();
-		Observer ob = new Observer();
-		p.add(ob);
-
-		ProcessBPELTimerTask timerTask = new ProcessBPELTimerTask();
-		timerTask.setPB(p);
-
-		Timer timer = new Timer();
-
-		Date date = new Date();
-
-		timer.scheduleAtFixedRate(timerTask, date, 2000);
-	}
+	
+ 
 }

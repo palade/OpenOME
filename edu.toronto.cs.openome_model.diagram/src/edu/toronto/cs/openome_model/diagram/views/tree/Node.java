@@ -9,11 +9,9 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PlatformUI;
-import org.eclipse.ui.views.IViewDescriptor;
 
 import edu.toronto.cs.openome_model.diagram.edit.parts.ModelEditPart;
 import edu.toronto.cs.openome_model.diagram.part.Openome_modelDiagramEditor;
-import edu.toronto.cs.openome_model.diagram.providers.Openome_modelElementTypes;
 
 class Node implements IAdaptable {
 	private String name = "";
